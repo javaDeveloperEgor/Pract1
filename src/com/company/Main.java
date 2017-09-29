@@ -11,16 +11,19 @@ public class Main {
         }
     }
 
-    public static void sort(String[] args){
-        Arrays.sort(args, new Comparator<String>() {
-            @Override
-            public int compare(String str1, String str2) {
-                return str1.compareTo(str2);
+    public static void sort(String[] args) {
+        for (int j = args.length - 1; j >= 0; j--) {
+            for (int k = 0; k < j; k++) {
+                if (args[k].compareTo(args[k + 1]) > 0) {
+                    String t = args[k];
+                    args[k] = args[k + 1];
+                    args[k + 1] = t;
+                }
             }
-        });
-
-        System.out.println(Arrays.toString(args));
+        }
+        print(args);
     }
+
 
     public static void main(String[] args) {
         String[] arrayString = new String[]{"Kyiv", "Warshawa", "Amsterdam"};
