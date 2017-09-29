@@ -15,9 +15,9 @@ public class Main {
         for (int j = args.length - 1; j >= 0; j--) {
             for (int k = 0; k < j; k++) {
                 if (args[k].compareTo(args[k + 1]) > 0) {
-                    String t = args[k];
+                    String temp = args[k];
                     args[k] = args[k + 1];
-                    args[k + 1] = t;
+                    args[k + 1] = temp;
                 }
             }
         }
